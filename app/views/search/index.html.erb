@@ -12,8 +12,9 @@
 <% if params[:clinic].present? %>
     <table border="1" cellpadding="100" class="app-table">
         <thead>
+            
             <% @clinic.doctors.each do |doctor| %>
-                <td> <%= doctor.name %> </td>
+                <th> <%= doctor.name %> </th>
             <% end %>
         <thead>
         
@@ -46,7 +47,7 @@
     <table border="1" cellpadding="100" class="app-table">
     <thead>
         <% @doctor.clinics.each do |clinic| %>
-            <td> <%= clinic.name %> </td>
+            <th> <%= clinic.name %> </th>
         <% end %>
     <thead>
 

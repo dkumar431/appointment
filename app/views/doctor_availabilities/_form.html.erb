@@ -1,18 +1,42 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <%= simple_form_for @event, remote: true do |f| %>
-  <div class="form-inputs">
+  <div class="form-inputs" style="width:100%; display:block;">
+    <div style="width:40%; display:inline-block;">
+        <%= f.label :street, 'Select Clinic' %>
+    </div>
+    <div style="width:55%; display:inline-block;">
+        <%= f.input :clinic_id, collection: @clinics , label: false,class: 'form-control'%>
+    </div>
     <%#= f.input :title %>
-    <div class="form-group" style="width:200px; display:inline-block;">
-          <%= f.label :street, 'Select Clinic' %>
-          <%= f.input :clinic_id, collection: @clinics , label: false%>
+    <div style="width:40%; display:inline-block;">
+        <%= f.label :street, 'Start DateTime:' %>
+    </div>
+    <div style="width:55%; display:inline-block;">
+        <span class="start_time"><%= %></span>
+    </div>
+
+    <div style="width:40%; display:inline-block;">
+        <%= f.label :street, 'End DateTime:' %>
+    </div>
+    <div style="width:55%; display:inline-block;">
+        <span class="end_time"><%= %></span>
     </div>
     
+    <div style="width:40%; display:inline-block;">
+        <%= f.label :street, 'Select Color' %>
+    </div>
+    <div style="width:55%; display:inline-block;">
+        <%= f.input :color, as: :select, collection: [['Black','black'], ['Green','green'], ['Red','red']] , label: false%>
+    </div>
+
     <%#= f.input :date_range, input_html: { class: "form-control input-sm date-range-picker" } %>
     <%= f.input_field :start, as: :hidden, value: Date.today, class: 'form-control input-sm start_hidden' %>
     <%= f.input_field :end, as: :hidden, value: Date.today, class: 'form-control input-sm end_hidden' %>
-    Start DateTime: <br /><span class="start_time"><%= %></span><br />
-    End DateTime: <br /><span class="end_time"><%= %></span><br />
-    <%= f.label :street, 'Select Color' %>
-    <%= f.input :color, as: :select, collection: [['Black','black'], ['Green','green'], ['Red','red']] , label: false%>
+     
   </div>
 
   <div class="form-actions">
