@@ -1,4 +1,5 @@
 class DoctorAvailabilitiesController < ApplicationController
+  before_action :authenticate_doctor!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
