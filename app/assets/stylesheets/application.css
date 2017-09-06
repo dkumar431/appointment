@@ -16,6 +16,13 @@
  *= require_self
 
  */
+ #doctor_availability_clinic_id{
+    width: 65%;
+ }
+ #doctor_availability_color{
+    width: 65%;
+ }
+
 
 .numeLogo {
     height: 46px;
