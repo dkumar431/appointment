@@ -16,3 +16,52 @@
  *= require_self
 
  */
+
+.numeLogo {
+    height: 46px;
+    position: relative;
+    top: 22px;
+    left: 37px;
+    margin-bottom: 12px;
+}
+.div_main {
+    height:85px;
+    width:100%; 
+    position:fixed;
+    z-index:1000; 
+    border-bottom:1px solid #eee;
+}
+.div_childImg {
+    width: 18%;
+    float: left; 
+    background:#f0f1f2;
+    height:85px;
+}
+.div_color {
+    width: 82%;
+    float: left;
+    height:85px;
+    background: #f0f1f2;
+}
+.home-search-container {
+    border-radius: 2px;
+    height: 50px;
+    text-align: center;
+}
+.location-container, .city-container {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 234px;
+}
+.search-button-wrapper {
+    display: inline-block;
+    float: right;
+    margin-left: 1px;
+}
+.keywords-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 1px;
+    float: left;
+}    

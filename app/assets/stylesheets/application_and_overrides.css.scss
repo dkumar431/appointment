@@ -905,9 +905,10 @@ img {
 main {
   @extend .container;
   // background-color: #eee;
-  padding-bottom: 80px;
+  //padding-bottom: 80px;
   width: 100%;
-  margin-top: 60px; // accommodate the navbar
+  //margin-top: 60px; // accommodate the navbar
+  padding-top:200px;
   }
 section {
   @extend .row;
