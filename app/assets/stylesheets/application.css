@@ -241,4 +241,8 @@ a:hover, a:focus {
     padding-bottom: 8px; /* 3) Bottom padding of selected tab. Should equal (1) PLUS (2) above */
     top: 0;
     }
+
+    li.inactive a{
+        color:#337ab7 !important;
+    }
     

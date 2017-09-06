@@ -1,8 +1,8 @@
 <div style="margin:2% 5%; 2% 5%; width:75%;">
 <ul class="nav nav-pills">
-  <li class="active"><a href="#" ><span><%= Date.today.to_s(:long) %></span></a></li>
-  <li><a href="#" title="New" style="color:#337ab7;"><span><%= (Date.today+1).to_s(:long) %></span></a></li>
-  <li><a href="#" title="Revised" style="color:#337ab7;"><span><%= (Date.today+2).to_s(:long) %></span></a></li>
+  <li class=<%= params[:date].blank? || Date.today == params[:date].to_date ? "active" : "inactive"%>><a href=<%= get_url(Date.today)%> ><span><%= Date.today.to_s(:long) %></span></a></li>
+  <li class =<%= ((Date.today+1) == params[:date].to_date)  ? "active" : "inactive" %>><a href=<%= get_url(Date.today+1)%> title="New" ><span><%= (Date.today+1).to_s(:long) %></span></a></li>
+  <li class =<%= ((Date.today+2) == params[:date].to_date)  ? "active" : "inactive" %>><a href=<%= get_url(Date.today+2)%> title="Revised" ><span><%= (Date.today+2).to_s(:long) %></span></a></li>
 </ul>
 
 <style>
@@ -72,9 +72,13 @@ $(document).ready(function(){
     });
 })
 </script>
+<%
+    @date = params[:date].to_date if params[:date].present?
+    @date ||= Date.today
+
+%>
 
 <% if params["clinic"] == "yes" %>
-    
     <table border="1" cellpadding="100" class="app-table">
         <thead>
             
@@ -85,7 +89,7 @@ $(document).ready(function(){
         
         <tr>
         <% @clinic.doctors.each_with_index do |doctor,i| %>
-            <% slots = Slot.get_bookings(doctor.id, @clinic.id,Date.today) %>
+            <% slots = Slot.get_bookings(doctor.id, @clinic.id,@date) %>
             <td>
 
             <% slots.each do |f| %>
@@ -114,7 +118,7 @@ $(document).ready(function(){
     <thead>
         <tr>
             <% @doctor.clinics.each_with_index do |clinic,i| %>
-                    <% slots = Slot.get_bookings(@doctor.id, clinic.id,Date.today) %>
+                    <% slots = Slot.get_bookings(@doctor.id, clinic.id,@date) %>
                     <td>
                         <% slots.each do |f| %>
                             <% if f.patient_id.present? %>
@@ -148,3 +152,4 @@ $(document).ready(function(){
     
   </div>
 </div>
+
