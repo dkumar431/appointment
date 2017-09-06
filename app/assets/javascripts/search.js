@@ -39,16 +39,7 @@ $(document).ready(function(){
     $("#searchform").submit();
 
     
-    // $.ajax({
-    //   url: `https://messageboard-tilak256.c9users.io/users/${ui.item.value}/posts`,
-    //   type: 'GET',
-    //   success(data) {
-    //     return console.log(data);
-    //   },
-    //   error(request, error) {
-    //     return alert(`Request: ${JSON.stringify(request)}`);
-    //   }
-    // });
+    
 });
 
 })
