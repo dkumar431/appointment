@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+  <body >
     <header>
       <%#= render 'layouts/navigation' %>
       <div class="div_main">
@@ -18,8 +18,8 @@
         <div class="div_color"></div>
       </div>
     </header>
-    <main role="main">
-      <div class='container'>
+    <main role="main" style ="height:100%;background:green11;width:100%;">
+      <div class='container11' style="height:100%; width:100%;">
         <%#= render 'layouts/messages' %>
         <%= yield %>
         <div id='remote_container'></div>
