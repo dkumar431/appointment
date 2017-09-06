@@ -9,7 +9,7 @@ class DoctorAvailabilitiesController < ApplicationController
   end
   def new
     @event = DoctorAvailability.new
-    @clinics = Clinic.all
+    @clinics = current_doctor.clinics
   end
   def create
     @event = DoctorAvailability.new(event_params)
