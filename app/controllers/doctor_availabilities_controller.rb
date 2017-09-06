@@ -12,14 +12,12 @@ class DoctorAvailabilitiesController < ApplicationController
     @clinics = Clinic.all
   end
   def create
-    # byebug
     @event = DoctorAvailability.new(event_params)
     @event.doctor_id = 1
+
     slots = Slot.get_slots(params[:doctor_availability][:start].to_datetime, params[:doctor_availability][:end].to_datetime)
-    # raise slots[0].id.inspect
-    slots.each do |c|
-      # byebug
-      Booking.create(clinic_id: params[:doctor_availability][:clinic_id], slot_id: c.id, doctor_id: Doctor.first.id, date: params[:doctor_availability][:start].to_datetime)
+    slots.each do |c|    
+      Booking.create(clinic_id: params[:doctor_availability][:clinic_id], slot_id: c.id, doctor_id: Doctor.first.id, date: params[:doctor_availability][:start].to_date)
     end
     @event.save
   end
