@@ -21,6 +21,11 @@
 body, html {
  height: 100%;
  padding: 0;
+ color: black;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #337ab7;
 }
 
 .loc{
@@ -60,6 +65,11 @@ body, html {
     padding-left: 0px !important;
     margin-right: 0px !important;
     margin-left: 0px !important;
+}
+.btn-primary, .submit, .authform .button, .button-xs {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
 }
  table.app-table{
     /*width: 70% !important;*/
