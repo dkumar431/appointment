@@ -1,0 +1,79 @@
+
+
+<div class="animatedtabs">
+<ul>
+<li class="selected"><a href="#" title="CSS Examples"><span><%= Date.today.to_s(:long) %></span></a></li>
+<li><a href="#" title="New"><span><%= (Date.today+1).to_s(:long) %></span></a></li>
+<li><a href="#" title="Revised"><span><%= (Date.today+2).to_s(:long) %></span></a></li>
+
+</ul>
+</div>
+
+<% if params[:clinic].present? %>
+    <table border="1" cellpadding="100" class="app-table">
+        <thead>
+            
+            <% @clinic.doctors.each do |doctor| %>
+                <th> <%= doctor.name %> </th>
+            <% end %>
+        <thead>
+        
+        <tr>
+        <% @clinic.doctors.each_with_index do |doctor,i| %>
+            <td>
+                <% if i==0 %>
+                    <span class="booked-slot">10:00 AM</span><br>
+                <% else %>
+                    <a href = "#" class="available-slot"><u> 10:00 AM </u></a> <br>
+                <% end %>
+                <% if i==1 %>
+                    <span class="booked-slot">10:30 AM</span><br>
+                <% else %>
+                    <a href = "#" class="available-slot"><u> 10:30 AM </u></a> <br>
+                <% end %>
+                <% if i==3 %>
+                    <span class="booked-slot">11:00 AM</span><br>
+                <% else %>
+                    <a href = "#" class="available-slot"><u> 11:00 AM </u></a> <br>
+                <% end %>
+                
+            </td>
+        <% end %>
+            
+            
+        </tr>
+    </table>
+<% elsif params[:doctor].present? %>
+    <table border="1" cellpadding="100" class="app-table">
+    <thead>
+        <% @doctor.clinics.each do |clinic| %>
+            <th> <%= clinic.name %> </th>
+        <% end %>
+    <thead>
+
+    <tr>
+    <% @doctor.clinics.each_with_index do |clinic,i| %>
+        <td>
+            <% if i==0 %>
+                <span class="booked-slot">10:00 AM</span><br>
+            <% else %>
+                <a href = "#" class="available-slot"><u> 10:00 AM </u></a> <br>
+            <% end %>
+            <% if i==1 %>
+                <span class="booked-slot">10:30 AM</span><br>
+            <% else %>
+                <a href = "#" class="available-slot"><u> 10:30 AM </u></a> <br>
+            <% end %>
+            <% if i==3 %>
+                <span class="booked-slot">11:00 AM</span><br>
+            <% else %>
+                <a href = "#" class="available-slot"><u> 11:00 AM </u></a> <br>
+            <% end %>
+            
+        </td>
+    <% end %>
+        
+        
+    </tr>
+    </table>
+<% end %>

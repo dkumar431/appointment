@@ -22,13 +22,21 @@ Doctor.create(name: "Hemali Jain")
 Doctor.create(name: "Ekta Verma")
 Doctor.create(name: "Sameer Yadav")
 
-ClinicsDoctors.delete_all
-ClinicsDoctors.create(doctor_id:Doctor.first.id,clinic_id:Clinic.first.id)
-ClinicsDoctors.create(doctor_id:Doctor.first.id,clinic_id:Clinic.second.id)
-ClinicsDoctors.create(doctor_id:Doctor.first.id,clinic_id:Clinic.third.id)
+ClinicsDoctor.delete_all
+ClinicsDoctor.create(doctor_id:Doctor.first.id,clinic_id:Clinic.first.id)
+ClinicsDoctor.create(doctor_id:Doctor.first.id,clinic_id:Clinic.second.id)
+ClinicsDoctor.create(doctor_id:Doctor.first.id,clinic_id:Clinic.third.id)
 
 
-ClinicsDoctors.create(doctor_id:Doctor.first.id,clinic_id:Clinic.fourth.id)
-ClinicsDoctors.create(doctor_id:Doctor.first.id,clinic_id:Clinic.fourth.id)
-ClinicsDoctors.create(doctor_id:Doctor.first.id,clinic_id:Clinic.fourth.id)
+ClinicsDoctor.create(doctor_id:Doctor.second.id,clinic_id:Clinic.first.id)
+ClinicsDoctor.create(doctor_id:Doctor.second.id,clinic_id:Clinic.second.id)
+ClinicsDoctor.create(doctor_id:Doctor.second.id,clinic_id:Clinic.third.id)
+
+ClinicsDoctor.create(doctor_id:Doctor.third.id,clinic_id:Clinic.first.id)
+ClinicsDoctor.create(doctor_id:Doctor.third.id,clinic_id:Clinic.third.id)
+ClinicsDoctor.create(doctor_id:Doctor.third.id,clinic_id:Clinic.fourth.id)
+
+ClinicsDoctor.create(doctor_id:Doctor.fourth.id,clinic_id:Clinic.second.id)
+ClinicsDoctor.create(doctor_id:Doctor.fourth.id,clinic_id:Clinic.third.id)
+ClinicsDoctor.create(doctor_id:Doctor.fourth.id,clinic_id:Clinic.fourth.id)
 

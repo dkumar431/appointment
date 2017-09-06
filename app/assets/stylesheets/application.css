@@ -18,3 +18,146 @@
  *= require_self
 
  */
+ #doctor_availability_clinic_id{
+    width: 65%;
+ }
+ #doctor_availability_color{
+    width: 65%;
+ }
+
+
+.numeLogo {
+    height: 46px;
+    position: relative;
+    top: 22px;
+    left: 37px;
+    margin-bottom: 12px;
+}
+.div_main {
+    height:85px;
+    width:100%; 
+    position:fixed;
+    z-index:1000; 
+    border-bottom:1px solid #eee;
+}
+.div_childImg {
+    width: 18%;
+    float: left; 
+    background:#f0f1f2;
+    height:85px;
+}
+.div_color {
+    width: 82%;
+    float: left;
+    height:85px;
+    background: #f0f1f2;
+}
+.home-search-container {
+    border-radius: 2px;
+    height: 50px;
+    text-align: center;
+}
+.location-container, .city-container {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 234px;
+}
+.search-button-wrapper {
+    display: inline-block;
+    float: right;
+    margin-left: 1px;
+}
+.keywords-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 1px;
+    float: left;
+}    
+ table.app-table{
+     border: #e0e0e5;
+     width: 100%;
+ }
+ table.app-table th{
+    background: #f0f1f2;
+ }
+ 
+ .available-slot{
+     color: green;
+ }
+ .booked-slot{
+     color: red;
+     text-decoration: line-through;
+ }
+
+ .animatedtabs{
+    border-bottom: 1px solid gray;
+    overflow: hidden;
+    width: 100%;
+    font-size: 14px; /*font of menu text*/
+    }
+    
+    
+    .animatedtabs ul{
+    list-style-type: none;
+    margin: 0;
+    margin-left: 10px; /*offset of first tab relative to page left edge*/
+    padding: 0;
+    }
+    
+    .animatedtabs li{
+    float: left;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .animatedtabs a{
+    float: left;
+    position: relative;
+    top: 5px; /* 1) Number of pixels to protrude up for selected tab. Should equal (3) MINUS (2) below */
+    background: url(tab-blue-left.gif) no-repeat left top;
+    margin: 0;
+    margin-right: 3px; /*Spacing between each tab*/
+    padding: 0 0 0 9px;
+    text-decoration: none;
+    
+    }
+    
+    .animatedtabs a span{
+    float: left;
+    position: relative;
+    display: block;
+    background: url(tab-blue-right.gif) no-repeat right top;
+    padding: 5px 14px 3px 5px; /* 2) Padding within each tab. The 3rd value, or 3px, should equal (1) MINUS (3) */
+    font-weight: bold;
+    color: black;
+    }
+    
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+    .animatedtabs a span {float:none;}
+    /* End IE5-Mac hack */
+    
+    
+    .animatedtabs .selected a{
+    background-position: 0 -125px;
+    top: 0;
+    }
+    
+    .animatedtabs .selected a span{
+    background-position: 100% -125px;
+    color: black;
+    padding-bottom: 8px; /* 3) Bottom padding of selected tab. Should equal (1) PLUS (2) above */
+    top: 0;
+    }
+    
+    .animatedtabs a:hover{
+    background-position: 0% -125px;
+    top: 0;
+    }
+    
+    .animatedtabs a:hover span{
+    background-position: 100% -125px;
+    padding-bottom: 8px; /* 3) Bottom padding of selected tab. Should equal (1) PLUS (2) above */
+    top: 0;
+    }
+    

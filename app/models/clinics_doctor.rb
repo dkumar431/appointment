@@ -1,5 +1,6 @@
-class ClinicsDoctors < ApplicationRecord
-
+class ClinicsDoctor < ApplicationRecord
+  belongs_to :clinic
+  belongs_to :doctor
   def self.get_available_doctors_clinics
     doctors = Doctor.all.pluck(:id,:name).compact.map {|doctor| {label: doctor.second, value: doctor.first} } 
     clinics = Clinic.all.pluck(:id,:name).compact.map {|clinic| {label: clinic.second, value: clinic.first} } 
