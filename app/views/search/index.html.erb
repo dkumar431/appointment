@@ -18,23 +18,18 @@
         
         <tr>
         <% @clinic.doctors.each_with_index do |doctor,i| %>
+            <% slots = Slot.get_bookings(doctor.id, @clinic.id,Date.today) %>
             <td>
-                <% if i==0 %>
-                    <span style="font-size:16px;" class="booked-slot">10:00 AM</span><br>
+            <% slots.each do |f| %>
+            
+                <% if f.patient_id.present? %>
+                    <span style="font-size:16px;" class="booked-slot"><%= f.slot.start_time%></span><br>
                 <% else %>
-                    <a style="font-size:16px;" href = "#" class="available-slot"><u> 10:00 AM </u></a> <br>
-                <% end %>
-                <% if i==1 %>
-                    <span style="font-size:16px;" class="booked-slot">10:30 AM</span><br>
-                <% else %>
-                    <a style="font-size:16px;" href = "#" class="available-slot"><u> 10:30 AM </u></a> <br>
-                <% end %>
-                <% if i==3 %>
-                    <span style="font-size:16px;" class="booked-slot">11:00 AM</span><br>
-                <% else %>
-                    <a style="font-size:16px;" href = "#" class="available-slot"><u> 11:00 AM </u></a> <br>
+                    <a style="font-size:16px;" href = "#" class="available-slot"><u> <%= f.slot.start_time%> </u></a> <br>
                 <% end %>
                 
+            
+            <% end %>
             </td>
         <% end %>
             
@@ -45,34 +40,24 @@
     <table border="1" cellpadding="100" class="app-table">
     <thead>
         <% @doctor.clinics.each do |clinic| %>
-            <th> <%= clinic.name %> </th>
+     <th> <%= clinic.name %> </th>
         <% end %>
     <thead>
-
-    <tr>
-    <% @doctor.clinics.each_with_index do |clinic,i| %>
-        <td>
-            <% if i==0 %>
-                <span style="font-size:16px;" class="booked-slot">10:00 AM</span><br>
-            <% else %>
-                <a style="font-size:16px;" href = "#" class="available-slot"><u> 10:00 AM </u></a> <br>
-            <% end %>
-            <% if i==1 %>
-                <span style="font-size:16px;" class="booked-slot">10:30 AM</span><br>
-            <% else %>
-                <a style="font-size:16px;" href = "#" class="available-slot"><u> 10:30 AM </u></a> <br>
-            <% end %>
-            <% if i==3 %>
-                <span style="font-size:16px;" class="booked-slot">11:00 AM</span><br>
-            <% else %>
-                <a style="font-size:16px;" href = "#" class="available-slot"><u> 11:00 AM </u></a> <br>
-            <% end %>
-            
-        </td>
-    <% end %>
+        <tr>
+            <% @doctor.clinics.each_with_index do |clinic,i| %>
+                    <% slots = Slot.get_bookings(@doctor.id, clinic.id,Date.today) %>
+                    <td>
+                        <% slots.each do |f| %>
+                            <% if f.patient_id.present? %>
+                                <span style="font-size:16px;" class="booked-slot"><%= f.slot.start_time%></span><br>
+                            <% else %>
+                                <a style="font-size:16px;" href = "#" class="available-slot"><u> <%= f.slot.start_time%> </u></a> <br>
+                            <% end %>
+                        <% end %>
+                    </td>
         
-        
-    </tr>
+            <% end %>
+        </tr>
     </table>
 <% end %>
 </div>

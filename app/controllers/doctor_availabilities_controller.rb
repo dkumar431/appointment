@@ -17,7 +17,7 @@ class DoctorAvailabilitiesController < ApplicationController
 
     slots = Slot.get_slots(params[:doctor_availability][:start].to_datetime, params[:doctor_availability][:end].to_datetime)
     slots.each do |c|    
-      Booking.create(clinic_id: params[:doctor_availability][:clinic_id], slot_id: c.id, doctor_id: Doctor.first.id, date: params[:doctor_availability][:start].to_date)
+      Booking.create(clinic_id: params[:doctor_availability][:clinic_id], slot_id: c.id, doctor_id: current_doctor.id, date: params[:doctor_availability][:start].to_date)
     end
     @event.save
   end

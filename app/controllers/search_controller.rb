@@ -5,13 +5,12 @@ class SearchController < ApplicationController
     
   end
     def index
-        @clinic = Clinic.first
-        @doctor = Doctor.first
         
         if params["clinic"] == "yes"
-            @clinic = Clinic.first
+            @clinic = Clinic.find(params[:doctor_id])
         else
-            @doctor = Doctor.first
+            @doctor = Doctor.find(params[:doctor_id])
+            # byebug
         end
     end 
     def create 
