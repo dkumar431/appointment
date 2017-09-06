@@ -1,4 +1,4 @@
 class Clinic < ApplicationRecord
-    has_many :clinics_doctors
-    has_many :doctors, through: :clinics_doctors
+    has_many :clinic_doctors
+    has_many :doctors, through: :clinic_doctors
 end
