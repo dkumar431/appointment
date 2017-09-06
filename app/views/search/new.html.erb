@@ -1,18 +1,18 @@
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<div class="backgroud_style">
-  <%= form_tag(search_index_path, method: :post, id: "searchform") do %>
-    
-    <div class="form-group" style="width:200px; display:inline-block;">
-      <%= text_field_tag :location,nil,  class: "form-control", placeholder: "Location" %>
-    </div>
-    <div class="form-group" style="width:300px; display:inline-block;">
-      <%= text_field_tag :term, nil, class: "form-control", placeholder: "Search for doctors,clinics" %>
-    </div>
-      <%= hidden_field_tag :doctor_id %>
-    <%#= submit_tag 'Search', class: "btn btn-default" %>
-  <% end %>
-</div>  
+<div style= "background:red;height:100%;position:relative;">
+	<img src="/TPS_landing.png" alt="Smiley face"  width="100%" height="100%">	  
+	<%= form_tag(search_index_path, method: :get) do %>
+		<div class="backgroud_style" style="padding: 0%;top: 14%;left: 45%;transform: translate3d(-50%,-50%, 0);position: absolute;">	
+			<div class="form-group" style="width:200px; display:inline-block;">
+		      <input type="text" placeholder="Hyderabad" class="form-control" id="location">
+		    </div>
+		    <div class="form-group" style="width:300px; display:inline-block;">
+		    	<input type="text" placeholder="Search Doctors, Clinics" class="form-control" id="term">			
+		    </div>
+		    
+		    <button style="border: 1px solid rgb(51, 122, 183);background: rgb(51, 122, 183); color:#fff;" type="submit" class="btn btn-default">Search</button>
+		</div>
+	<% end %>
+</div>
