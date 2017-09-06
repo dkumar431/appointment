@@ -21,12 +21,43 @@
 body, html {
  height: 100%;
  padding: 0;
+ color: black;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #337ab7;
 }
 .container, main {
     padding-right: 0px !important;
     padding-left: 0px !important;
     margin-right: 0px !important;
     margin-left: 0px !important;
+}
+.btn-primary, .submit, .authform .button, .button-xs {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+ table.app-table{
+    /*width: 70% !important;*/
+ }
+ table.app-table th{
+    color: #337ab7 !important;
+ }
+ table.app-table td, th{
+    padding: 10px !important;
+ }
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #337ab7;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #f0f1f2;
+}
+a:hover, a:focus {
+  color: #337ab7;
+  text-decoration: underline;
 }
 .container {
     /*width: 100% !important;
