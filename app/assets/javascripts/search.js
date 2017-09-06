@@ -32,6 +32,10 @@ $(document).ready(function(){
     $('#term').val(ui.item.label);
     event.preventDefault();
     $("#doctor_id").val(ui.item.value);
+    var type = ui.item.type;
+    if(type == 2){
+      $("#clinic").val("yes");
+    }
     $("#searchform").submit();
 
     

@@ -3,16 +3,19 @@
 
 <div style= "background:red;height:100%;position:relative;">
 	<img src="/TPS_landing.png" alt="Smiley face"  width="100%" height="100%">	  
-	<%= form_tag(search_index_path, method: :get) do %>
+	<%= form_tag("/search", method: :get, id: :searchform) do %>
 		<div class="backgroud_style" style="padding: 0%;top: 14%;left: 45%;transform: translate3d(-50%,-50%, 0);position: absolute;">	
 			<div class="form-group" style="width:200px; display:inline-block;">
-		      <input type="text" placeholder="Hyderabad" class="form-control" id="location">
+					<i class="practo-icon icon-pin icon-ic_location_system"></i>
+		      <input type="text" placeholder="Hyderabad" class="loc" id="location">
+
 		    </div>
 		    <div class="form-group" style="width:300px; display:inline-block;">
-		    	<input type="text" placeholder="Search Doctors, Clinics" class="form-control" id="term">			
+		    	<input type="text" placeholder="Search Doctors, Clinics" class="	search" id="term" name="term">			
 		    </div>
+				<input type="hidden" name="doctor_id"  id="doctor_id">
+				<input type="hidden" name="clinic"  id="clinic">
 		    
-		    <button style="border: 1px solid rgb(51, 122, 183);background: rgb(51, 122, 183); color:#fff;" type="submit" class="btn btn-default">Search</button>
 		</div>
 	<% end %>
 </div>

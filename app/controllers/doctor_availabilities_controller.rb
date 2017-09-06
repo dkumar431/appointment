@@ -24,8 +24,7 @@ class DoctorAvailabilitiesController < ApplicationController
   def edit
     @clinics = Clinic.all
   end
-  def update 
-    binding.pry
+  def update
     @event.update(event_params)
   end
   def destroy

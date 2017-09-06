@@ -7,11 +7,14 @@ class SearchController < ApplicationController
     def index
         @clinic = Clinic.first
         @doctor = Doctor.first
-        if params[:clinic].present?
+        
+        if params["clinic"] == "yes"
             @clinic = Clinic.first
-        elsif params[:doctor].present?
+        else
             @doctor = Doctor.first
         end
-
     end 
+    def create 
+        
+    end
 end

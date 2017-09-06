@@ -27,6 +27,39 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #337ab7;
 }
+
+.loc{
+    width: 201px;
+    height: 50px;
+    background: whitesmoke;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #262626;
+    padding-left: 45px;
+    transition: background .55s ease;
+    border-radius: 6px;
+}
+
+.search {
+    width: 473px;
+    height: 50px;
+    background: whitesmoke;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #262626;
+    padding-left: 45px;
+    transition: background .55s ease;
+    border-radius: 6px;
+    
+}
+
+.pin_icon {
+    background-position: -8px -47px;
+    width: 17px;
+    height: 23px;
+}
 .container, main {
     padding-right: 0px !important;
     padding-left: 0px !important;
