@@ -1,11 +1,12 @@
 class ClinicsDoctors < ApplicationRecord
 
   def self.get_available_doctors_clinics
-    doctors = Doctor.all.pluck(:id,:name)
-    clinics = Clinic.all.pluck(:id,:name)
-    search_suggestions = {
-      doctors: doctors,
-      clinics: clinics
-    }
+    doctors = Doctor.all.pluck(:id,:name).compact.map {|doctor| {label: doctor.second, value: doctor.first} } 
+    clinics = Clinic.all.pluck(:id,:name).compact.map {|clinic| {label: clinic.second, value: clinic.first} } 
+    arr = Array.new
+    arr.append doctors
+    arr.append clinics
+    arr.flatten
+    
   end 
 end

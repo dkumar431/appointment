@@ -1,5 +1,6 @@
-<%= form_tag(search_index_path, method: :get) do %>
+<%= form_tag(search_index_path, method: :post, id: "searchform") do %>
   <%= text_field_tag :location %>
   <%= text_field_tag :term %>
+    <%= hidden_field_tag :doctor_id %>
   <%= submit_tag 'Search' %>
 <% end %>
