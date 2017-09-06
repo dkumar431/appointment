@@ -1,5 +1,0 @@
-class RemovePatientId < ActiveRecord::Migration[5.0]
-  def change
-    remove_column :bookings, :patient_id, :integer
-  end
-end
