@@ -1,8 +1,10 @@
 class SearchController < ApplicationController
     def index
-        if params[:clinic_id].present?
+        @clinic = Clinic.first
+        @doctor = Doctor.first
+        if params[:clinic].present?
             @clinic = Clinic.first
-        elsif params[:doctor_id].present?
+        elsif params[:doctor].present?
             @doctor = Doctor.first
         end
 
