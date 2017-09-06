@@ -1,0 +1,41 @@
+
+<div class= "notice alert-success" style="display:none" >Booking Successfull</div><br><br>
+<%= form_tag url_for(:controller => 'booking', :action => 'create') ,class: "form-horizontal"%>
+<div class="form-group">
+<div class="col-sm-2">
+<label class="control-label col-sm-2" for="name">Name:</label>
+</div>
+<div class="col-sm-8">
+<%= text_field_tag :name, params[:name],class: 'form-control',placeholder: "Name"%>
+</div>
+</div>
+<div class="form-group"> 
+<div class="col-sm-2">   
+<label class="control-label col-sm-2" for="mobile">Mobile:</label></div>
+<div class="col-sm-8">        
+<%= text_field_tag :mobile, params[:mobile],class: 'form-control',placeholder: "Mobile Number" %>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-2">    
+<label class="control-label col-sm-2" for="email">Email:</label>
+</div>
+<div class="col-sm-8">
+<%= text_field_tag :email, params[:email] ,class: 'form-control',placeholder: "Email Id"%>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-2">    
+<label class="control-label col-sm-2" for="ssn">SSN:</label></div>
+<div class="col-sm-8">
+<%= number_field_tag :ssn, params[:ssn],class: 'form-control',placeholder: "SSN" %>
+</div>
+</div>
+<%= hidden_field_tag :booking_id, params[:booking_id]%>
+<div class="form-group">
+<div class="col-sm-offset-7 col-sm-6">
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<%= button_tag "Book" , class: "btn btn-primary" ,id: "booking"%>
+
+</div></div>
+</form>
