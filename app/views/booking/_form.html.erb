@@ -28,7 +28,7 @@
 <div class="col-sm-2">    
 <label class="control-label col-sm-2" for="ssn">SSN:</label></div>
 <div class="col-sm-8">
-<%= number_field_tag :ssn, params[:ssn],class: 'form-control',placeholder: "SSN" %>
+<%= text_field_tag :ssn, params[:ssn],class: 'form-control',placeholder: "SSN" %>
 </div>
 </div>
 <%= hidden_field_tag :booking_id, params[:booking_id]%>
