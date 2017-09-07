@@ -50,6 +50,8 @@ initialize_calendar = function() {
           date_range_picker();
           $('.start_hidden').val(moment(event.start).format('YYYY-MM-DD HH:mm'));
           $('.end_hidden').val(moment(event.end).format('YYYY-MM-DD HH:mm'));
+          $('.start_time').html(moment(event.start).format('YYYY-MM-DD HH:mm'));
+          $('.end_time').html(moment(event.end).format('YYYY-MM-DD HH:mm'));
         });
       }
     });

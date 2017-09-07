@@ -13,7 +13,7 @@ class DoctorAvailabilitiesController < ApplicationController
   end
   def create
     @event = DoctorAvailability.new(event_params)
-    @event.doctor_id = 1
+    @event.doctor_id = current_doctor.id
 
     slots = Slot.get_slots(params[:doctor_availability][:start].to_datetime, params[:doctor_availability][:end].to_datetime)
     slots.each do |c|    
