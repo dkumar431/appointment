@@ -54,7 +54,9 @@ h1, h2, h3, h4, h5, h6,
     border-radius: 6px;
     
 }
-
+.form-control {
+    color : black !important;
+}
 .pin_icon {
     background-position: -8px -47px;
     width: 17px;
@@ -120,6 +122,7 @@ a:hover, a:focus {
     position:fixed;
     z-index:1000; 
     border-bottom:1px solid #eee;
+    background: #fff;
 }
 .div_childImg {
     width: 18%;
