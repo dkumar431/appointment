@@ -1,4 +1,33 @@
-
+<script>
+$('document').ready(function(){
+$(".booking").on("click",function(){
+        var name = $("#name").val();
+        var mobile = $("#mobile").val();
+        var email = $("#email").val();
+        var ssn = $("#ssn").val();
+        var booking_id =  $("#booking_id").val();
+        var saveData = $.ajax({
+            type: 'POST',
+            url: " /booking/create_booking",
+            data: {
+                name : name,
+                mobile : mobile,
+                email : email,
+                ssn : ssn,
+                booking_id : booking_id
+            },
+            dataType: "text",
+            success: function(resultData) {
+                $(".notice").show(); 
+            $("#booking").prop('disabled', true);;
+            setTimeout(function(){
+              window.location.reload();
+          },2000); 
+            }
+      });
+    });
+});
+</script>
 <div class= "notice alert-success" style="display:none" >Booking Successfull</div><br><br>
 <%= form_tag url_for(:controller => 'booking', :action => 'create') ,class: "form-horizontal"%>
 <div class="form-group">
@@ -28,14 +57,14 @@
 <div class="col-sm-2">    
 <label class="control-label col-sm-2" for="ssn">SSN:</label></div>
 <div class="col-sm-8">
-<%= number_field_tag :ssn, params[:ssn],class: 'form-control',placeholder: "SSN" %>
+<%= text_field_tag :ssn, params[:ssn],class: 'form-control',placeholder: "SSN" %>
 </div>
 </div>
-<%= hidden_field_tag :booking_id, params[:booking_id]%>
+<%= hidden_field_tag :booking_id%>
 <div class="form-group">
 <div class="col-sm-offset-7 col-sm-6">
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-<%= button_tag "Book" , class: "btn btn-primary" ,id: "booking"%>
+<button type="button" class="btn btn-default close-mod" data-dismiss="modal">Close</button>
+<input type="button" class="booking btn btn-primary" value="Book">
 
 </div></div>
 </form>
