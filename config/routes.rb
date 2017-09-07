@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     root 'doctor_availabilities#index', as: :authenticated_root
   end
   root to: 'search#new'
-  resources :booking
+  resources :booking do 
+    collection do 
+      post :create_booking  
+    end
+  end
 end

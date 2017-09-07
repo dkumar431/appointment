@@ -1,8 +1,8 @@
 <div style="margin:2% 5%; 2% 5%; width:75%;">
 <ul class="nav nav-pills">
   <li class=<%= params[:date].blank? || Date.today == params[:date].to_date ? "active" : "inactive"%>><a href=<%= get_url(Date.today)%> ><span><%= Date.today.to_s(:long) %></span></a></li>
-  <li class =<%= ((Date.today+1) == params[:date].to_date)  ? "active" : "inactive" %>><a href=<%= get_url(Date.today+1)%> title="New" ><span><%= (Date.today+1).to_s(:long) %></span></a></li>
-  <li class =<%= ((Date.today+2) == params[:date].to_date)  ? "active" : "inactive" %>><a href=<%= get_url(Date.today+2)%> title="Revised" ><span><%= (Date.today+2).to_s(:long) %></span></a></li>
+  <li class =<%= params[:date].present? && ((Date.today+1) == params[:date].to_date)  ? "active" : "inactive" %>><a href=<%= get_url(Date.today+1)%> title="New" ><span><%= (Date.today+1).to_s(:long) %></span></a></li>
+  <li class =<%= params[:date].present? && ((Date.today+2) == params[:date].to_date)  ? "active" : "inactive" %>><a href=<%= get_url(Date.today+2)%> title="Revised" ><span><%= (Date.today+2).to_s(:long) %></span></a></li>
 </ul>
 
 <style>
