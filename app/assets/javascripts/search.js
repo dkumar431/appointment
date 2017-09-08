@@ -18,12 +18,9 @@ $(document).ready(function(){
     url: '/search/suggestions',
     type: 'GET',
     dataType: 'json',
-    success(data) {
+    success: function(data){
       const availableAuthors = data.names;
       $('#term').autocomplete({source: availableAuthors});
-    },
-    error(request, error) {
-      return alert(`Request: ${JSON.stringify(request)}`);
     }
   });
 
