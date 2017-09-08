@@ -3,6 +3,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <%= simple_form_for @event, remote: true do |f| %>
+    <%= hidden_field_tag "current_doctor_id", params[:current_doctor_id] %>
   <div class="form-inputs" style="width:100%; display:block;">
     <div style="width:40%; display:inline-block;">
         <%= f.label :street, 'Select Clinic' %>

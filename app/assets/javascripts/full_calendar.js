@@ -17,7 +17,7 @@ initialize_calendar = function() {
       select: function(start, end) {
         console.log(start)
         console.log(end)
-        $.getScript('/doctor_availabilities/new', function() {
+        $.getScript('/doctor_availabilities/new?current_doctor_id='+$(".current_doctor").val(), function() {
           // $('#event_date_range').val(moment(start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(end).format("MM/DD/YYYY HH:mm"))
           // date_range_picker();
            $('.start_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));

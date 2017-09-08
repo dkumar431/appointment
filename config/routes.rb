@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'staff/index'
+
   devise_for :staffs
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :doctors
@@ -15,6 +17,10 @@ Rails.application.routes.draw do
   authenticated :doctor do
     root 'doctor_availabilities#index', as: :authenticated_root
   end
+  authenticated :staff do
+    root 'staff#index', as: :staff_root
+  end
+ 
   root to: 'search#new'
   resources :booking do 
     collection do 

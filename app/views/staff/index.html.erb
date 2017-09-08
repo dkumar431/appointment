@@ -1,0 +1,17 @@
+
+<div class="container">           
+<table class="table">
+  <thead>
+    <tr>
+      <th>List of Doctors</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%@doctors.each{|doctor|%> 
+    <tr>
+    <td><%= link_to doctor.name, doctor_availabilities_path(current_doctor_id: doctor.id) %></td>
+    </tr>
+  <%}%>
+  </tbody>
+</table>
+</div>
