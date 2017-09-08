@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :staffs
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :doctors
   get 'search/index'
