@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905152953) do
+ActiveRecord::Schema.define(version: 20170908024928) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "patient_id"
@@ -26,22 +26,22 @@ ActiveRecord::Schema.define(version: 20170905152953) do
     t.index ["slot_id"], name: "index_bookings_on_slot_id"
   end
 
+  create_table "clinic_doctors", force: :cascade do |t|
+    t.integer  "clinic_id"
+    t.integer  "doctor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "clinics", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "address_line1"
     t.string   "address_line2"
     t.string   "city"
     t.string   "state"
-    t.bigint   "zip"
-    t.decimal  "longitue"
-    t.decimal  "latitude"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "clinics_doctors", id: false, force: :cascade do |t|
-    t.integer "doctor_id", null: false
-    t.integer "clinic_id", null: false
+    t.string   "zip"
   end
 
   create_table "doctor_availabilities", force: :cascade do |t|
@@ -63,17 +63,28 @@ ActiveRecord::Schema.define(version: 20170905152953) do
     t.string   "email"
     t.string   "specialization"
     t.float    "rating"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.index ["email"], name: "index_doctors_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
   end
 
   create_table "patients", force: :cascade do |t|
     t.string   "name"
     t.string   "mobile"
     t.string   "email"
-    t.string   "ssn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "comment"
   end
 
   create_table "slots", force: :cascade do |t|

@@ -13,30 +13,29 @@ Clinic.create(name: "KIMS Healthcare")
 Clinic.create(name: "Apollo Health")
 
 Doctor.delete_all
-Doctor.create(name: "Deepak Padhy")
-Doctor.create(name: "Anil K")
-Doctor.create(name: "Ashwini Pandey")
-Doctor.create(name: "Vamsi Krishna")
-Doctor.create(name: "Tilak Yadav")
-Doctor.create(name: "Hemali Jain")
-Doctor.create(name: "Ekta Verma")
-Doctor.create(name: "Sameer Yadav")
+Doctor.create(name: "Deepak Padhy", email: "test@123.com", password: "12345678")
+Doctor.create(name: "Anil K", email: "test@124.com", password: "12345678")
+Doctor.create(name: "Ashwini Pandey", email: "test@125.com", password: "12345678")
+Doctor.create(name: "Vamsi Krishna", email: "test@126.com", password: "12345678")
+Doctor.create(name: "Tilak Yadav", email: "test@127.com", password: "12345678")
+Doctor.create(name: "Hemali Jain", email: "test@128.com", password: "12345678")
+Doctor.create(name: "Ekta Verma", email: "test@129.com", password: "12345678")
+Doctor.create(name: "Sameer Yadav", email: "test@120.com", password: "12345678")
 
-ClinicsDoctor.delete_all
-ClinicsDoctor.create(doctor_id:Doctor.first.id,clinic_id:Clinic.first.id)
-ClinicsDoctor.create(doctor_id:Doctor.first.id,clinic_id:Clinic.second.id)
-ClinicsDoctor.create(doctor_id:Doctor.first.id,clinic_id:Clinic.third.id)
+ClinicDoctor.delete_all
+ClinicDoctor.create(doctor_id:Doctor.first.id,clinic_id:Clinic.first.id)
+ClinicDoctor.create(doctor_id:Doctor.first.id,clinic_id:Clinic.second.id)
+ClinicDoctor.create(doctor_id:Doctor.first.id,clinic_id:Clinic.third.id)
 
 
-ClinicsDoctor.create(doctor_id:Doctor.second.id,clinic_id:Clinic.first.id)
-ClinicsDoctor.create(doctor_id:Doctor.second.id,clinic_id:Clinic.second.id)
-ClinicsDoctor.create(doctor_id:Doctor.second.id,clinic_id:Clinic.third.id)
+ClinicDoctor.create(doctor_id:Doctor.second.id,clinic_id:Clinic.first.id)
+ClinicDoctor.create(doctor_id:Doctor.second.id,clinic_id:Clinic.second.id)
+ClinicDoctor.create(doctor_id:Doctor.second.id,clinic_id:Clinic.third.id)
 
-ClinicsDoctor.create(doctor_id:Doctor.third.id,clinic_id:Clinic.first.id)
-ClinicsDoctor.create(doctor_id:Doctor.third.id,clinic_id:Clinic.third.id)
-ClinicsDoctor.create(doctor_id:Doctor.third.id,clinic_id:Clinic.fourth.id)
+ClinicDoctor.create(doctor_id:Doctor.third.id,clinic_id:Clinic.first.id)
+ClinicDoctor.create(doctor_id:Doctor.third.id,clinic_id:Clinic.third.id)
+ClinicDoctor.create(doctor_id:Doctor.third.id,clinic_id:Clinic.fourth.id)
 
-ClinicsDoctor.create(doctor_id:Doctor.fourth.id,clinic_id:Clinic.second.id)
-ClinicsDoctor.create(doctor_id:Doctor.fourth.id,clinic_id:Clinic.third.id)
-ClinicsDoctor.create(doctor_id:Doctor.fourth.id,clinic_id:Clinic.fourth.id)
-
+ClinicDoctor.create(doctor_id:Doctor.fourth.id,clinic_id:Clinic.second.id)
+ClinicDoctor.create(doctor_id:Doctor.fourth.id,clinic_id:Clinic.third.id)
+ClinicDoctor.create(doctor_id:Doctor.fourth.id,clinic_id:Clinic.fourth.id)
