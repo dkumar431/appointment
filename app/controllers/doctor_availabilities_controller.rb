@@ -9,7 +9,16 @@ class DoctorAvailabilitiesController < ApplicationController
   end
   def new
     @event = DoctorAvailability.new
-    @clinics = current_doctor.clinics
+    #@clinics = current_doctor.clinics
+    # @clinics = Doctor.joins("inner join clinic_doctors cd on doctors.id = cd.id inner join clinics c on c.id = cd.clinic_id inner join addresses a on a.clinic_id = c.id").
+    #   select("c.name ||  ' - ' || a.line1 as full_address").
+    #   where("doctors.id = #{current_doctor.id}")
+    @clinics1 = Clinic.joins(:clinic_doctors).
+        select("clinics.id, clinics.name, clinics.address_line1").
+        where("clinic_doctors.doctor_id = 1")
+    @clinics = @clinics1.map {|clinic| [clinic.name.to_s + " - " + clinic.address_line1.to_s, clinic.id] }    
+    
+    
   end
   def create
     @event = DoctorAvailability.new(event_params)
