@@ -15,7 +15,7 @@ class DoctorAvailabilitiesController < ApplicationController
     #   where("doctors.id = #{current_doctor.id}")
     @clinics1 = Clinic.joins(:clinic_doctors).
         select("clinics.id, clinics.name, clinics.address_line1").
-        where("clinic_doctors.doctor_id = 1")
+        where("clinic_doctors.doctor_id = #{current_doctor.id}")
     @clinics = @clinics1.map {|clinic| [clinic.name.to_s + " - " + clinic.address_line1.to_s, clinic.id] }    
     
     
