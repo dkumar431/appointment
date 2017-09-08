@@ -13,7 +13,9 @@
       <%#= render 'layouts/navigation' %>
       <div class="div_main">
           <img src="/invisalign_email_logo.png" style="padding-top: 20px;padding-left: 20px;height: 60px;float: left;" href="/">
-          <%= link_to('Logout', destroy_doctor_session_path, method: :delete, class: "pull-right btn btn-primary",style:'margin:20px;') %>
+          <% if !current_doctor.nil? %>
+            <%= link_to('Logout', destroy_doctor_session_path, method: :delete, class: "pull-right btn btn-primary",style:'margin:20px;') %>
+          <% end %>  
       </div>
     </header>
     <main role="main" style ="height:100%;background:green11;width:100%;">
