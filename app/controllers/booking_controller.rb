@@ -24,7 +24,7 @@ class BookingController < ApplicationController
   end
 
   def patient_params
-    params.permit(:name, :mobile, :email, :ssn)
+    params.permit(:name, :mobile, :email, :comment)
   end
 
 end
