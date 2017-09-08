@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6,
 } 
 .loc{
     width: 100%;
-    height: 35px;
+    height: 60px;
     background: whitesmoke;
     border: none;
     font-size: 10pt;
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6,
 
 .search {
     width: 100%;
-    height: 35px;
+    height: 60px;
     background: whitesmoke;
     border: none;
     font-size: 10pt;
